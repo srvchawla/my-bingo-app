@@ -43,9 +43,9 @@ Perfect for:
 ### Installation & Development
 
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd my-bingo-app
+# Clone the repository (or use your fork's URL)
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
 
 # Install dependencies
 npm install
