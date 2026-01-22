@@ -8,7 +8,10 @@ export function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-full p-6 bg-preview-bg overflow-hidden">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-slate-800 via-preview-bg to-preview-bg opacity-50" />
+      <div 
+        className="absolute inset-0 opacity-50" 
+        style={{ background: 'radial-gradient(circle, #1e293b 0%, #0f172a 50%, #0f172a 100%)' }}
+      />
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -75,8 +75,11 @@ export function PreviewBoard() {
       
       {/* Glow effect behind board */}
       <div 
-        className="absolute inset-0 -z-10 bg-gradient-radial from-preview-glow/20 via-transparent to-transparent blur-3xl animate-pulse-glow"
-        style={{ transform: 'translateZ(-50px)' }}
+        className="absolute inset-0 -z-10 blur-3xl animate-pulse-glow"
+        style={{ 
+          transform: 'translateZ(-50px)',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%)'
+        }}
       />
     </div>
   );
