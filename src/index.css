@@ -1,8 +1,17 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-accent: #2563eb;
-  --color-accent-light: #3b82f6;
+  /* Vibrant accent colors for playful design */
+  --color-primary: #8b5cf6;
+  --color-primary-light: #a78bfa;
+  --color-secondary: #ec4899;
+  --color-secondary-light: #f472b6;
+  --color-tertiary: #14b8a6;
+  --color-tertiary-light: #2dd4bf;
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  
+  /* Game state colors */
   --color-marked: #dcfce7;
   --color-marked-border: #22c55e;
   --color-bingo: #fbbf24;
@@ -18,4 +27,95 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, sans-serif;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Slide in animation for cards */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bounce animation for button hover */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Animation utility classes */
+.animate-gradient {
+  background: linear-gradient(-45deg, #8b5cf6, #ec4899, #14b8a6, #f59e0b);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-slide-in-1 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.animate-slide-in-2 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.animate-slide-in-3 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.animate-slide-in-4 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+}
+
+.btn-bounce:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient {
+    animation: none;
+    background: linear-gradient(-45deg, #8b5cf6, #ec4899, #14b8a6, #f59e0b);
+  }
+  
+  .animate-slide-in-1,
+  .animate-slide-in-2,
+  .animate-slide-in-3,
+  .animate-slide-in-4 {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .btn-bounce:hover {
+    animation: none;
+    transform: scale(1);
+  }
 }
