@@ -64,13 +64,58 @@ body {
   }
 }
 
+/* Animation utility classes */
+.animate-gradient {
+  background: linear-gradient(-45deg, #8b5cf6, #ec4899, #14b8a6, #f59e0b);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-slide-in-1 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.animate-slide-in-2 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.animate-slide-in-3 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.animate-slide-in-4 {
+  animation: slide-in 0.6s ease-out forwards;
+  animation-delay: 0.7s;
+  opacity: 0;
+}
+
+.btn-bounce:hover {
+  animation: bounce 0.5s ease-in-out;
+}
+
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .animate-gradient {
+    animation: none;
+    background: linear-gradient(-45deg, #8b5cf6, #ec4899, #14b8a6, #f59e0b);
+  }
+  
+  .animate-slide-in-1,
+  .animate-slide-in-2,
+  .animate-slide-in-3,
+  .animate-slide-in-4 {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .btn-bounce:hover {
+    animation: none;
+    transform: scale(1);
   }
 }

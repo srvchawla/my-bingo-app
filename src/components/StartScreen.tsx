@@ -5,12 +5,7 @@ interface StartScreenProps {
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div 
-      className="flex flex-col items-center justify-center min-h-full p-6 relative overflow-hidden"
-      style={{
-        background: 'linear-gradient(-45deg, #8b5cf6, #ec4899, #14b8a6, #f59e0b)',
-        backgroundSize: '400% 400%',
-        animation: 'gradient-shift 15s ease infinite',
-      }}
+      className="flex flex-col items-center justify-center min-h-full p-6 relative overflow-hidden animate-gradient"
     >
       {/* Hero Section */}
       <div className="text-center max-w-2xl mb-8 z-10">
@@ -26,12 +21,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-10 z-10">
         {/* Card 1 */}
         <div 
-          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-          style={{
-            animation: 'slide-in 0.6s ease-out forwards',
-            animationDelay: '0.1s',
-            opacity: 0,
-          }}
+          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow animate-slide-in-1"
         >
           <div className="text-5xl mb-4">🤝</div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">Find Your Tribe</h3>
@@ -42,12 +32,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         {/* Card 2 */}
         <div 
-          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-          style={{
-            animation: 'slide-in 0.6s ease-out forwards',
-            animationDelay: '0.3s',
-            opacity: 0,
-          }}
+          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow animate-slide-in-2"
         >
           <div className="text-5xl mb-4">✨</div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">Simple & Fun</h3>
@@ -58,12 +43,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         {/* Card 3 */}
         <div 
-          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-          style={{
-            animation: 'slide-in 0.6s ease-out forwards',
-            animationDelay: '0.5s',
-            opacity: 0,
-          }}
+          className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow animate-slide-in-3"
         >
           <div className="text-5xl mb-4">🎯</div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">5×5 Challenge</h3>
@@ -76,18 +56,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
       {/* CTA Button */}
       <button
         onClick={onStart}
-        className="px-10 py-5 bg-white text-primary font-bold text-xl rounded-full shadow-2xl hover:shadow-xl transition-all z-10 relative"
-        style={{
-          animation: 'slide-in 0.6s ease-out forwards',
-          animationDelay: '0.7s',
-          opacity: 0,
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.animation = 'bounce 0.5s ease-in-out';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.animation = '';
-        }}
+        className="px-10 py-5 bg-white text-primary font-bold text-xl rounded-full shadow-2xl hover:shadow-xl transition-all z-10 relative animate-slide-in-4 btn-bounce"
         aria-label="Start playing Social Bingo game"
       >
         Let's Play! 🚀
