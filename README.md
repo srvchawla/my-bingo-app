@@ -59,10 +59,6 @@ Soc Ops (Social Operations) is an interactive icebreaker game perfect for team e
 ### Installation & Running
 
 ```bash
-# Clone the repository
-git clone https://github.com/srvchawla/my-bingo-app.git
-cd my-bingo-app
-
 # Install dependencies
 npm install
 
@@ -138,9 +134,8 @@ This project is licensed under the [MIT License](LICENSE) - feel free to use it 
 ## 💬 Support
 
 - 📖 [Documentation](.lab/GUIDE.md)
-- 🐛 [Report Issues](https://github.com/srvchawla/my-bingo-app/issues)
-- 💡 [Request Features](https://github.com/srvchawla/my-bingo-app/issues)
 - 📧 [Security Policy](SECURITY.md)
+- 📋 [Support Guidelines](SUPPORT.md)
 
 ## 🌟 Acknowledgments
 
