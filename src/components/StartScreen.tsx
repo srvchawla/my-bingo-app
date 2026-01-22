@@ -88,6 +88,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
         onMouseLeave={(e) => {
           e.currentTarget.style.animation = '';
         }}
+        aria-label="Start playing Social Bingo game"
       >
         Let's Play! 🚀
       </button>
