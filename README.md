@@ -75,7 +75,7 @@ Open your browser to `http://localhost:5173` and start playing!
 | **React 19** | Modern UI framework with latest features |
 | **TypeScript** | Type-safe development |
 | **Vite** | Lightning-fast build tool |
-| **Tailwind CSS v4** | Utility-first styling with `@theme` directive |
+| **Tailwind CSS 4** | Utility-first styling with `@theme` directive |
 | **Vitest** | Fast unit testing |
 
 ## 🏗️ Build & Test
