@@ -5,15 +5,37 @@
 - [ ] `npm run build` — must succeed
 - [ ] `npm run test` — all tests passing
 
-## Project Essentials
-**Stack**: React 19 + TypeScript, Vite, Tailwind v4 (`@theme` in `src/index.css`, no config file). Social Bingo game (5×5 grid).
+## Stack & Commands
+**Stack**: React 19 + TypeScript, Vite, Tailwind v4, Vitest. Social Bingo icebreaker game.
 
-**Dev commands**: `npm run dev` (host 0.0.0.0), `npm run build` (tsc + vite), `npm run lint`, `npm run test` (vitest).
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Dev server (host 0.0.0.0:5173) |
+| `npm run build` | `tsc -b && vite build` |
+| `npm run lint` | ESLint |
+| `npm run test` | Vitest (run once) |
 
-**Architecture**: `App.tsx` switches `StartScreen` ↔ `GameScreen` based on `gameState`. `useBingoGame` hook owns state + localStorage (`bingo-game-state`, version 1—bump `STORAGE_VERSION` for schema changes). Pure game logic in `src/utils/bingoLogic.ts` with full Vitest coverage.
+## Architecture
+`App.tsx` switches `StartScreen` ↔ `GameScreen` based on `gameState`. `useBingoGame` hook owns state + localStorage persistence (`bingo-game-state`, bump `STORAGE_VERSION` for schema changes). Pure game logic in `src/utils/bingoLogic.ts`.
 
-**Board invariants**: 5×5 grid, IDs 0–24 (center index 12 = pre-marked free space). Never allow toggling free space. `checkBingo` checks rows/cols/diagonals; `handleSquareClick` uses `queueMicrotask` for state updates to avoid React timing issues.
+**Data flow**: `useBingoGame` → pure logic → state → localStorage. **States**: `'start'` → `'playing'` → `'bingo'`.
 
-**Styling**: Tailwind v4 tokens (`--color-accent`, `--color-marked`, etc.) in `src/index.css`. For design changes, see `.github/instructions/frontend-design.instructions.md` and `tailwind-4.instructions.md`.
+## Board Invariants (Critical)
+- 5×5 grid, IDs 0–24 sequentially
+- **Center (index 12)** = FREE SPACE, always pre-marked, never toggleable
+- `handleSquareClick` uses `queueMicrotask` to schedule bingo detection—avoids React setState-during-render issues
 
-**Types**: Central definitions in `src/types/index.ts`—extend rather than duplicate.
+## Styling (Tailwind v4)
+Theme tokens in `src/index.css` using `@theme` block (no `tailwind.config.js`). Use `bg-marked`, `border-marked-border`, etc. See `.github/instructions/tailwind-4.instructions.md`.
+
+## Testing Patterns
+All game logic in `bingoLogic.ts` has full coverage. Keep functions pure, add tests in `bingoLogic.test.ts`.
+
+## Types
+Extend `src/types/index.ts`—never duplicate type definitions.
+
+## Questions Data
+Edit `src/data/questions.ts` (24 prompts required). `FREE_SPACE` constant exported separately.
+
+## Questions Data
+Edit `src/data/questions.ts` (24 prompts required). `FREE_SPACE` constant exported separately.
