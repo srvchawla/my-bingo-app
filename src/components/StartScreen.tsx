@@ -32,8 +32,8 @@ export function StartScreen({ onStart }: StartScreenProps) {
       <div className="relative z-10 text-center max-w-lg mx-auto px-4">
         {/* Hero headline */}
         <h1 
-          className="text-5xl md:text-6xl font-display font-bold text-white mb-3 tracking-tight"
-          style={{ fontWeight: 700 }}
+          className="text-5xl md:text-6xl font-bold text-white mb-3 tracking-tight"
+          style={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}
         >
           Discover Your Circle
         </h1>
@@ -45,10 +45,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         {/* Centered card with transparency */}
         <div 
-          className="bg-white/90 backdrop-blur-lg rounded-2xl p-8 md:p-10 shadow-2xl mb-8 border border-white/30 transition-all hover:bg-white/95 hover:shadow-3xl"
-          style={{
-            backdropFilter: 'blur(20px)',
-          }}
+          className="bg-white/90 backdrop-blur-lg rounded-2xl p-8 md:p-10 shadow-2xl mb-8 border border-white/30 transition-all hover:bg-white/95 hover:shadow-2xl"
         >
           {/* Benefit points as minimal list */}
           <ul className="space-y-5 text-left">
